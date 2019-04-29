@@ -21,3 +21,5 @@ C:\App\App\App\obj\Debug\App.csproj.GenerateResource.cache
 C:\App\App\App\obj\Debug\App.csproj.CoreCompileInputs.cache
 C:\App\App\App\obj\Debug\App.exe
 C:\App\App\App\obj\Debug\App.pdb
+C:\App\App\App\obj\Debug\App.TkaniForm.resources
+C:\App\App\App\obj\Debug\App.WareForm.resources

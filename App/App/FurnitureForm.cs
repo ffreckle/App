@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace App
 {
-    public partial class WareForm : Form
+    public partial class FurnitureForm : Form
     {
-        public WareForm()
+        public FurnitureForm()
         {
             InitializeComponent();
-        }
-
-        private void тканиToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            TkaniForm tkani = new TkaniForm();
-            tkani.Show();
-            this.Close();
         }
     }
 }

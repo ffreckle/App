@@ -16,16 +16,19 @@ namespace App
     {
         SqlConnection connection = new SqlConnection(Properties.Settings.Default.dbConnectionSettings);
 
+        SqlDataAdapter sda;
+        DataSet ds;
+
         public FurnitureForm()
         {
             InitializeComponent();
         }
 
-        private void FurnitureForm_Load(object sender, EventArgs e)
+        public void LoadList()
         {
             String query = "SELECT * FROM furniture";
-            SqlDataAdapter sda = new SqlDataAdapter(query, connection);
-            DataSet ds = new DataSet();
+            sda = new SqlDataAdapter(query, connection);
+            ds = new DataSet();
             sda.Fill(ds, "furniture");
             dataGridView1.DataSource = ds.Tables["furniture"];
 
@@ -57,12 +60,64 @@ namespace App
                 }
             }
         }
+    
+
+        private void FurnitureForm_Load(object sender, EventArgs e)
+        {
+            this.LoadList();
+        }
+           
 
         private void button1_Click(object sender, EventArgs e)
         {
             Form ware = new WareForm();
             ware.Show();
             this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataSet changes = ds.GetChanges();
+                if (changes != null)
+                {
+                    SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+                    builder.GetInsertCommand();
+                    int updateRows = sda.Update(changes, "furniture");
+                    ds.AcceptChanges();
+                    MessageBox.Show("Данные обновлены...");
+                    this.LoadList();
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Вы уверены что хотите удалить запись?", "Заголовок", MessageBoxButtons.OKCancel);
+
+            try
+            {
+                foreach (DataGridViewRow items in dataGridView1.SelectedRows)
+                {
+                    dataGridView1.Rows.RemoveAt(items.Index);
+
+                }
+
+                this.button2_Click(sender, e);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -24,3 +24,4 @@ C:\App\App\App\obj\Debug\App.pdb
 C:\App\App\App\obj\Debug\App.TkaniForm.resources
 C:\App\App\App\obj\Debug\App.WareForm.resources
 C:\App\App\App\obj\Debug\App.FurnitureForm.resources
+C:\App\App\App\obj\Debug\App.ConstructorForm.resources

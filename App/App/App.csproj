@@ -64,6 +64,12 @@
     <Compile Include="FurnitureForm.Designer.cs">
       <DependentUpon>FurnitureForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConstructorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConstructorForm.Designer.cs">
+      <DependentUpon>ConstructorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </Compile>
     <EmbeddedResource Include="AuthForm.resx">
       <DependentUpon>AuthForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConstructorForm.resx">
+      <DependentUpon>ConstructorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FurnitureForm.resx">
       <DependentUpon>FurnitureForm.cs</DependentUpon>

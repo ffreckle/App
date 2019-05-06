@@ -16,5 +16,11 @@ namespace App
         {
             InitializeComponent();
         }
+
+        private void конструкторToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form cons = new ConstructorForm();
+            cons.Show();
+        }
     }
 }

@@ -84,6 +84,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShopDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShopDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ShopDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShopDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ShopDataSet3Izdelie.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShopDataSet3Izdelie.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TkaniForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +110,24 @@
     </Compile>
     <Compile Include="UserForm.Designer.cs">
       <DependentUpon>UserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserFurnitureForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserFurnitureForm.Designer.cs">
+      <DependentUpon>UserFurnitureForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserIzdelieForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserIzdelieForm.Designer.cs">
+      <DependentUpon>UserIzdelieForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserTkaniForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserTkaniForm.Designer.cs">
+      <DependentUpon>UserTkaniForm.cs</DependentUpon>
     </Compile>
     <Compile Include="WareForm.cs">
       <SubType>Form</SubType>
@@ -129,6 +162,15 @@
     <EmbeddedResource Include="UserForm.resx">
       <DependentUpon>UserForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserFurnitureForm.resx">
+      <DependentUpon>UserFurnitureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserIzdelieForm.resx">
+      <DependentUpon>UserIzdelieForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserTkaniForm.resx">
+      <DependentUpon>UserTkaniForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WareForm.resx">
       <DependentUpon>WareForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -141,6 +183,39 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="ShopDataSet1.xsc">
+      <DependentUpon>ShopDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ShopDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ShopDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ShopDataSet1.xss">
+      <DependentUpon>ShopDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ShopDataSet11.xsc">
+      <DependentUpon>ShopDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="ShopDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ShopDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ShopDataSet11.xss">
+      <DependentUpon>ShopDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="ShopDataSet3Izdelie.xsc">
+      <DependentUpon>ShopDataSet3Izdelie.xsd</DependentUpon>
+    </None>
+    <None Include="ShopDataSet3Izdelie.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ShopDataSet3Izdelie.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ShopDataSet3Izdelie.xss">
+      <DependentUpon>ShopDataSet3Izdelie.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

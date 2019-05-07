@@ -28,19 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.tkaniBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.shopDataSet1 = new App.ShopDataSet1();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.furnitureBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.shopDataSet = new App.ShopDataSet();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.furnitureTableAdapter = new App.ShopDataSetTableAdapters.furnitureTableAdapter();
+            this.tkaniTableAdapter = new App.ShopDataSet1TableAdapters.tkaniTableAdapter();
+            this.button2 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.tkaniBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shopDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.furnitureBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shopDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -70,11 +82,24 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DataSource = this.tkaniBindingSource;
+            this.comboBox1.DisplayMember = "Название";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(30, 81);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(162, 21);
             this.comboBox1.TabIndex = 3;
+            this.comboBox1.ValueMember = "id";
+            // 
+            // tkaniBindingSource
+            // 
+            this.tkaniBindingSource.DataMember = "tkani";
+            this.tkaniBindingSource.DataSource = this.shopDataSet1;
+            // 
+            // shopDataSet1
+            // 
+            this.shopDataSet1.DataSetName = "ShopDataSet1";
+            this.shopDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // textBox2
             // 
@@ -119,11 +144,24 @@
             // 
             // comboBox2
             // 
+            this.comboBox2.DataSource = this.furnitureBindingSource;
+            this.comboBox2.DisplayMember = "Наименование";
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(29, 200);
+            this.comboBox2.Location = new System.Drawing.Point(29, 199);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(163, 21);
             this.comboBox2.TabIndex = 9;
+            this.comboBox2.ValueMember = "id";
+            // 
+            // furnitureBindingSource
+            // 
+            this.furnitureBindingSource.DataMember = "furniture";
+            this.furnitureBindingSource.DataSource = this.shopDataSet;
+            // 
+            // shopDataSet
+            // 
+            this.shopDataSet.DataSetName = "ShopDataSet";
+            this.shopDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel1
             // 
@@ -149,12 +187,32 @@
             this.button1.TabIndex = 12;
             this.button1.Text = "Сохранить";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // furnitureTableAdapter
+            // 
+            this.furnitureTableAdapter.ClearBeforeFill = true;
+            // 
+            // tkaniTableAdapter
+            // 
+            this.tkaniTableAdapter.ClearBeforeFill = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(12, 415);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "Закрыть";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // ConstructorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panel1);
@@ -171,6 +229,10 @@
             this.Name = "ConstructorForm";
             this.Text = "KonstructorForm";
             this.Load += new System.EventHandler(this.ConstructorForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.tkaniBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shopDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.furnitureBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shopDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,5 +253,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button1;
+        private ShopDataSet shopDataSet;
+        private System.Windows.Forms.BindingSource furnitureBindingSource;
+        private ShopDataSetTableAdapters.furnitureTableAdapter furnitureTableAdapter;
+        private ShopDataSet1 shopDataSet1;
+        private System.Windows.Forms.BindingSource tkaniBindingSource;
+        private ShopDataSet1TableAdapters.tkaniTableAdapter tkaniTableAdapter;
+        private System.Windows.Forms.Button button2;
     }
 }

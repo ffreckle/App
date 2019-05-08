@@ -87,23 +87,86 @@ namespace App
         {
             this.Close();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+           
+            Draw();
+        }
+
+        private void Draw()
+        {
+            if(textBox2.Text.Trim().Length == 0 || textBox3.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Введите размеры изделия!");
+            }
+            else
+            {
+                Graphics g = panel1.CreateGraphics();
+                g.Clear(Color.White);
+                Pen p = new Pen(Color.Black, 1);
+                int w = Convert.ToInt32(textBox2.Text.Trim());
+                int h = Convert.ToInt32(textBox3.Text.Trim());
+                g.DrawRectangle(p, 10, 10, w, h);
+
+                DataRowView item = (DataRowView)comboBox1.SelectedItem;
+
+                if (item.Row.ItemArray[4].ToString() == "*.jpg")
+                {
+                    Brush brush;
+                    brush = new SolidBrush(Color);---------------------------
+                    g.FillRectangle(brush, 11, 11, w - 1, h - 1);
+                }
+                else
+                {
+                    String color = item.Row.ItemArray[3].ToString();
+                    Brush brush;
+                    switch (color)
+                    {
+                        case "красный":
+                            brush = new SolidBrush(Color.Red);
+                            g.FillRectangle(brush, 11, 11, w - 1, h - 1);
+                            break;
+                        case "зеленый":
+                            brush = new SolidBrush(Color.FromArgb(255, 0, 255, 0));
+                            g.FillRectangle(brush, 11, 11, w - 1, h - 1);
+                            break;
+
+                        default:
+                            brush = new SolidBrush(Color.White);
+                            g.FillRectangle(brush, 11, 11, w - 1, h - 1);
+                            break;
+
+
+                    }
+                }
+
+                
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            AddTkani addtkani = new AddTkani();
+            addtkani.Show();
+        }
         /*
 fillCombos();
 public void fillCombos()
 {
-  String sql = "SELECT id, название, цвет, цена FROM tkani";
-  connection.Open();
-  SqlCommand command = new SqlCommand(sql,connection);
-  SqlDataReader reader = command.ExecuteReader();
-  List<Tkani> listoftkani = new List<Tkani>();
+String sql = "SELECT id, название, цвет, цена FROM tkani";
+connection.Open();
+SqlCommand command = new SqlCommand(sql,connection);
+SqlDataReader reader = command.ExecuteReader();
+List<Tkani> listoftkani = new List<Tkani>();
 
-  while (reader.Read())
-  {
-      listoftkani.Add(new Tkani(Convert.ToInt32(reader["id"]), reader["название"].ToString() + "," + reader["цвет"], reader["цвет"].ToString(),Convert.ToDouble(reader["цена"])));
-  }
-  comboBox1.DataSource = listoftkani;
-  comboBox1.DisplayMember = "название";
-  reader.Close();
+while (reader.Read())
+{
+listoftkani.Add(new Tkani(Convert.ToInt32(reader["id"]), reader["название"].ToString() + "," + reader["цвет"], reader["цвет"].ToString(),Convert.ToDouble(reader["цена"])));
+}
+comboBox1.DataSource = listoftkani;
+comboBox1.DisplayMember = "название";
+reader.Close();
 }
 */
     }

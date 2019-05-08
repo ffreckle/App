@@ -28,3 +28,4 @@ C:\App\App\App\bin\Debug\App.pdb
 C:\App\App\App\obj\Debug\App.exe
 C:\App\App\App\obj\Debug\App.pdb
 C:\App\App\App\obj\Debug\App.UserFurnitureForm.resources
+C:\App\App\App\obj\Debug\App.AddTkani.resources

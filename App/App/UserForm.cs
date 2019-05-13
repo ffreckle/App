@@ -21,6 +21,7 @@ namespace App
         {
             Form cons = new ConstructorForm();
             cons.Show();
+            this.Close();
         }
 
         private void изделияToolStripMenuItem_Click(object sender, EventArgs e)
@@ -39,6 +40,12 @@ namespace App
         {
             UserFurnitureForm userfurniture = new UserFurnitureForm();
             userfurniture.Show();
+        }
+
+        private void заказToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form order = new UserOrderForm();
+            order.Show();
         }
     }
 }

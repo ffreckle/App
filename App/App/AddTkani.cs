@@ -52,6 +52,7 @@ namespace App
             command.ExecuteScalar();
 
             MessageBox.Show("Ткань добавлена!");
+                this.Close();
 
             }
             catch

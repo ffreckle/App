@@ -110,17 +110,20 @@ namespace App
                 g.DrawRectangle(p, 10, 10, w, h);
 
                 DataRowView item = (DataRowView)comboBox1.SelectedItem;
+                String color = item.Row.ItemArray[3].ToString();
+                String ris = item.Row.ItemArray[4].ToString();
+                Brush brush;
 
-                if (item.Row.ItemArray[4].ToString() == "*.jpg")
+                if (ris.Contains("jpg"))
                 {
-                    Brush brush;
-                    brush = new SolidBrush(Color);---------------------------
-                    g.FillRectangle(brush, 11, 11, w - 1, h - 1);
+                    Image img = Image.FromFile(ris);
+                    Bitmap bimage = new Bitmap(img);
+                    TextureBrush tb = new TextureBrush(bimage);
+                    g.FillRectangle(tb, 11, 11, w - 1, h - 1);
                 }
                 else
                 {
-                    String color = item.Row.ItemArray[3].ToString();
-                    Brush brush;
+                    
                     switch (color)
                     {
                         case "красный":
@@ -143,6 +146,11 @@ namespace App
 
                 
             }
+        }
+
+        private void ConstructorForm_Activated(object sender, EventArgs e)
+        {
+            this.tkaniTableAdapter.Fill(this.shopDataSet1.tkani);
         }
 
         private void button4_Click(object sender, EventArgs e)
